@@ -1,0 +1,99 @@
+/* src/components/Achievements/Achievements.css */
+
+.achievements-section {
+    min-height: 100vh;
+    width: 100vw;
+    /* Apply the dark radial gradient */
+    background: radial-gradient(
+        at 10% 10%, 
+        #4A00B7 0%, 
+        #2A005F 30%, 
+        #000000 100%
+    );
+    
+    color: white; 
+    padding: 100px 0; 
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Update card background to ensure visibility */
+.achievement-card {
+    background-color: #1a1a1a; /* Maintain dark card background */
+}
+
+.achievements-container {
+    max-width: 1200px;
+    width: 90%;
+    padding: 20px;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 60px;
+    color: #eae5f3; 
+    text-align: center;
+}
+
+.achievement-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Four columns on desktop */
+    gap: 30px;
+    text-align: center;
+}
+
+.achievement-card {
+    background-color: #1a1a1a; /* Slightly lighter dark card background */
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+}
+
+.achievement-card:hover {
+    transform: translateY(-5px);
+    background-color: #252525;
+}
+
+.icon-wrapper {
+    color: #00bcd4; /* Tertiary accent color for icons */
+    margin-bottom: 15px;
+}
+
+.achievement-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: white;
+}
+
+.achievement-date {
+    font-size: 0.9rem;
+    color: #00bcd4;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.achievement-description {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+
+/* ==================================== */
+/* MOBILE RESPONSIVENESS (<= 768px)       */
+/* ==================================== */
+
+@media (max-width: 768px) {
+    .achievements-section {
+        padding: 80px 20px;
+        min-height: auto;
+    }
+    .achievement-grid {
+        grid-template-columns: 1fr; /* Single column on mobile */
+        gap: 20px;
+    }
+}

@@ -1,0 +1,108 @@
+/* src/components/Connect/Connect.css */
+
+/* src/components/Connect/Connect.css */
+
+.connect-section {
+    width: 100vw;
+    /* Apply the dark radial gradient */
+    background: radial-gradient(
+        at 10% 10%, 
+        #4A00B7 0%, 
+        #2A005F 30%, 
+        #000000 100%
+    );
+    
+    color: white; /* Changed general text to white */
+    padding: 100px 0 40px 0; 
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.section-title {
+    color: white; /* Ensure title is white */
+}
+.subtitle {
+    color: rgba(255, 255, 255, 0.8);
+}
+.social-link-item {
+    color: #00bcd4; /* Use the cyan tertiary accent for icons/links */
+}
+.link-name {
+    color: white;
+}
+.copyright {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+.copyright p {
+    color: rgba(244, 8, 8, 0.6);
+}
+
+.connect-container {
+    max-width: 900px;
+    width: 90%;
+    padding: 20px;
+}
+
+.section-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: #ffffff; 
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    color: #ffffff;
+    margin-bottom: 40px;
+}
+
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.social-link-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: #FF5A5F; /* Accent color for icons */
+    font-weight: 600;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-link-item:hover {
+    color: #E04E53;
+    transform: translateY(-3px);
+}
+
+.link-name {
+    font-size: 0.9rem;
+    color: #ffffff;
+}
+
+.copyright {
+    border-top: 1px solid #ccc;
+    padding-top: 30px;
+    width: 100%;
+}
+
+.copyright p {
+    font-size: 0.9rem;
+    color: #888;
+}
+
+/* ==================================== */
+/* MOBILE RESPONSIVENESS (<= 768px)       */
+/* ==================================== */
+
+@media (max-width: 768px) {
+    .social-links {
+        gap: 20px;
+    }
+}

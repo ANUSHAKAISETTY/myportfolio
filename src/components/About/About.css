@@ -1,0 +1,93 @@
+/* src/components/About/About.css */
+
+.about-section {
+    min-height: 100vh;
+    width: 100vw;
+    
+    /* --- FIX: Using the radial gradient to match the light source in the image --- */
+    background: radial-gradient(
+        at 10% 10%, /* Start point (top-left) */
+        #4A00B7 0%, /* Vibrant Purple */
+        #2A005F 30%, /* Mid-tone Purple */
+        #000000 100% /* Fade to Black */
+    );
+    
+    color: #fefcfc; /* Light text for contrast */
+    padding-top: 50px; 
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ... (The rest of your About.css styles will follow here) ... */
+
+/* ... (The rest of your About.css styles will follow below this) ... */
+
+.about-container {
+    max-width: 1000px;
+    width: 90%;
+    padding: 40px 20px;
+    text-align: left;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 40px;
+    color: #4A00B7; /* Use accent color for title */
+    text-align: center;
+}
+
+.about-content {
+    margin-bottom: 40px;
+}
+
+.about-paragraph {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 20px;
+}
+
+.about-details h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #f4f2f7;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.about-details ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px 40px;
+}
+
+.about-details li {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.8;
+}
+
+/* ==================================== */
+/* MOBILE RESPONSIVENESS (<= 768px)       */
+/* ==================================== */
+
+@media (max-width: 768px) {
+    .about-section {
+        padding-top: 80px; 
+    }
+    .section-title {
+        font-size: 2rem;
+    }
+    .about-paragraph {
+        font-size: 1rem;
+    }
+    .about-details ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

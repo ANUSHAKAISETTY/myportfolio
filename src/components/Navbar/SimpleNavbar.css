@@ -1,0 +1,118 @@
+/* src/components/Navbar/SimpleNavbar.css */
+
+.simple-navbar-wrapper {
+    position: fixed;
+    top: 20px; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%; 
+    max-width: 900px; /* Increased max-width for modern look */
+    z-index: 1000;
+}
+
+.simple-navbar {
+    /* Dark Theme Styles */
+    background-color: rgba(30, 30, 30, 0.9); /* Dark background with slight opacity */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); 
+    border-radius: 15px; /* Large, modern rounded corners */
+    height: 60px; /* Slightly taller bar */
+    padding: 0 30px;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; 
+}
+
+/* --- Logo Styling --- */
+.navbar-logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: white; /* White logo text */
+    cursor: pointer;
+    margin-right: 40px;
+}
+
+.logo-accent {
+    color: #4A00B7; /* Keep the subtle accent dot */
+}
+
+
+/* --- Navigation Links --- */
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+}
+
+.nav-links li {
+    margin-left: 30px; /* Spacing between links */
+    font-size: 1rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.8); /* Light, slightly translucent text */
+    cursor: pointer;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+}
+
+.nav-links li:hover,
+.nav-links li.active-item {
+    color: white; /* Fully white on hover or active */
+}
+
+
+/* --- Mobile Menu Icon --- */
+.hamburger {
+    display: none; 
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: white; /* White hamburger icon */
+    z-index: 3;
+}
+
+/* ==================================== */
+/* MOBILE RESPONSIVENESS (<= 768px)       */
+/* ==================================== */
+
+@media (max-width: 768px) {
+    .simple-navbar {
+        height: 50px;
+        padding: 0 15px;
+    }
+    
+    .nav-links {
+        display: none; 
+        flex-direction: column;
+        position: absolute;
+        top: 60px; /* Below the main bar */
+        right: 0;
+        width: 180px; /* Smaller mobile menu width */
+        background-color: rgba(30, 30, 30, 0.95);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+        padding: 10px 0;
+        border-radius: 5px;
+    }
+
+    .nav-links.open {
+        display: flex; 
+    }
+
+    .nav-links li {
+        margin: 0;
+        text-align: right; /* Align text to the right in the dropdown */
+        padding: 10px 20px;
+        color: rgba(255, 255, 255, 0.8);
+    }
+    
+    .nav-links li:hover,
+    .nav-links li.active-item {
+        background-color: rgba(50, 50, 50, 0.9); 
+        color: white;
+    }
+
+    .hamburger {
+        display: block; 
+    }
+}
