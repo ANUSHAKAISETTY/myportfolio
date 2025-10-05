@@ -1,6 +1,6 @@
 // src/components/Projects/Projects.jsx
 import React from 'react';
-import './Projects.css';
+import './Projects.css'; // <-- FIX: Changed path from '../Projects.css' to './Projects.css'
 import { Github } from 'lucide-react'; // Removed Link icon
 
 const projectData = [
