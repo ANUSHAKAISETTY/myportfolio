@@ -68,7 +68,15 @@
     max-width: 600px; 
 }
 
-/* --- Resume Button Styling (No major changes) --- */
+/* --- NEW WRAPPER FOR THE LINK/BUTTON --- */
+.resume-button-link {
+    /* Ensures the anchor tag aligns correctly with flex-start */
+    width: fit-content;
+    /* The anchor tag itself acts as a block element */
+    display: block; 
+}
+
+/* --- Resume Button Styling --- */
 .resume-button {
     background-color: #4A00B7; 
     color: white;
@@ -79,7 +87,7 @@
     cursor: pointer;
     border-radius: 5px;
     transition: background-color 0.3s ease;
-    width: fit-content;
+    /* CRITICAL: Remove the width property as the wrapper takes care of it */
 }
 
 .resume-button:hover {
@@ -105,7 +113,7 @@
 }
 
 /* ==================================== */
-/* MOBILE RESPONSIVENESS (<= 768px)       */
+/* MOBILE RESPONSIVENESS (<= 768px)       */
 /* ==================================== */
 
 @media (max-width: 768px) {
@@ -127,5 +135,15 @@
         padding-right: 20px;
         margin-top: 30px;
     }
-    /* ... (rest of the mobile styles remain the same) ... */
+    /* Ensure the link wrapper centers on mobile */
+    .resume-button-link {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .resume-button {
+        /* Optional: give button max width on mobile */
+        max-width: 300px;
+        width: 100%;
+    }
 }

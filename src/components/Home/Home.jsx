@@ -5,10 +5,8 @@ import DarkVeilBackground from './DarkVeilBackground';
 import AnushaPhoto from '../../assets/Samplepic.png';
 
 const Home = () => {
-  const handleViewResume = () => { // Changed function name for clarity
-    const resumeUrl = '/Anusha_Resume.pdf'; // Path to your resume in the public folder
-    window.open(resumeUrl, '_blank'); // Opens the PDF in a new browser tab
-  };
+  // NOTE: The JavaScript function handleViewResume is now removed,
+  // as the link will be handled directly by the HTML <a> tag.
 
   return (
     <section className="home-section" id="home">
@@ -26,9 +24,19 @@ const Home = () => {
           <p className="description">
             A final-year IT student at Dr MGR University, skilled in Python and Java, focused on developing robust and efficient software solutions.
           </p>
-          <button className="resume-button" onClick={handleViewResume}> {/* Changed onClick and button text */}
-            View Resume
-          </button>
+          
+          {/* --- FIX: Using an <a> tag around the button to view the static file --- */}
+          <a
+            href="/Anusha_Resume.pdf" // Direct path to the file in the public folder
+            target="_blank" // Opens in a new tab
+            rel="noopener noreferrer"
+            className="resume-button-link" // New class for applying layout styles
+          >
+            <button className="resume-button">
+              View Resume
+            </button>
+          </a>
+          {/* ---------------------------------------------------------------------- */}
         </div>
         <div className="home-image-container">
           <img src={AnushaPhoto} alt="Anusha's Portfolio Picture" className="profile-photo" />
