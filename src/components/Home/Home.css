@@ -113,7 +113,7 @@
 }
 
 /* ==================================== */
-/* MOBILE RESPONSIVENESS (<= 768px)       */
+/* MOBILE RESPONSIVENESS (<= 768px)       */
 /* ==================================== */
 
 @media (max-width: 768px) {
@@ -135,6 +135,26 @@
         padding-right: 20px;
         margin-top: 30px;
     }
+    
+    /* --- CRITICAL FIXES FOR IMAGE VISIBILITY ON MOBILE --- */
+    .home-image-container {
+        width: 80%; /* Image takes up 80% of screen width */
+        height: auto; /* Allow height to scale with content */
+        margin-bottom: 30px; 
+        margin-top: 50px; /* Add margin on top to separate from navbar */
+        padding: 0;
+        justify-content: center;
+    }
+
+    .profile-photo {
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+        border-radius: 5px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    /* ----------------------------------------------------- */
+
     /* Ensure the link wrapper centers on mobile */
     .resume-button-link {
         width: 100%;
