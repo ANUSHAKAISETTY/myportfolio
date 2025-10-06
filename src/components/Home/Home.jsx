@@ -5,9 +5,6 @@ import DarkVeilBackground from './DarkVeilBackground';
 import AnushaPhoto from '../../assets/Samplepic.png';
 
 const Home = () => {
-  // NOTE: The JavaScript function handleViewResume is now removed,
-  // as the link will be handled directly by the HTML <a> tag.
-
   return (
     <section className="home-section" id="home">
       <DarkVeilBackground
@@ -25,9 +22,9 @@ const Home = () => {
             A final-year IT student at Dr MGR University, skilled in Python and Java, focused on developing robust and efficient software solutions.
           </p>
           
-          {/* --- FIX: Using an <a> tag around the button to view the static file --- */}
+          {/* --- FINAL FIX: Renamed file to bypass deployment cache --- */}
           <a
-            href="/Anusha_Resume.pdf" // Direct path to the file in the public folder
+            href="/Anusha_Portfolio_Resume.pdf" // <--- CHANGED PATH TO A UNIQUE NAME
             target="_blank" // Opens in a new tab
             rel="noopener noreferrer"
             className="resume-button-link" // New class for applying layout styles
