@@ -1,39 +1,36 @@
-/* src/components/Home/Home.css - Focus on the .home-content-wrapper style */
+/* --- Global Section & Wrapper Styles --- */
 
 .home-section {
     position: relative; 
     display: flex;
     align-items: center;
     justify-content: center;
-    /* The section should be 100% of the viewport height */
+    /* The section should be 100% of the viewport height on desktop */
     height: 100vh; 
     width: 100vw;
-    padding: 0; /* Removed top padding from here */
+    padding: 0;
     background-color: black; 
     color: white; 
     box-sizing: border-box; 
-    overflow: hidden; 
+    overflow-x: hidden; /* Ensure horizontal scroll is hidden globally */
 }
 
 .home-content-wrapper {
     position: relative; 
     z-index: 10; 
     width: 100%; 
-    /* CRITICAL FIX: Set height to 100% of the parent (which is 100vh) 
-       and use padding-top for Navbar clearance */
     height: 100%; 
     padding-top: 70px; /* Space to push content down below the Navbar */
     
     display: flex;
     align-items: center;
     justify-content: space-between;
+    box-sizing: border-box;
 }
-
-/* ... (rest of the CSS remains the same) ... */
 
 /* --- Left Side Content (Text) --- */
 .home-content {
-    /* Take up 65% of the total width */
+    /* Take up 65% of the total width on Desktop */
     width: 65%; 
     height: 100vh;
     display: flex;
@@ -41,7 +38,7 @@
     justify-content: center;
     align-items: flex-start; 
     
-    /* Spacing */
+    /* Desktop Spacing */
     padding-left: 5%; 
     padding-right: 40px; 
 }
@@ -66,17 +63,16 @@
     line-height: 1.6;
     margin-bottom: 30px;
     max-width: 600px; 
-}
-
-/* --- NEW WRAPPER FOR THE LINK/BUTTON --- */
-.resume-button-link {
-    /* Ensures the anchor tag aligns correctly with flex-start */
-    width: fit-content;
-    /* The anchor tag itself acts as a block element */
-    display: block; 
+    /* CRITICAL FIX: Ensure text wraps gracefully on small screens */
+    word-wrap: break-word; 
+    overflow-wrap: break-word;
 }
 
 /* --- Resume Button Styling --- */
+.resume-button-link {
+    width: fit-content;
+    display: block; 
+}
 .resume-button {
     background-color: #4A00B7; 
     color: white;
@@ -87,7 +83,6 @@
     cursor: pointer;
     border-radius: 5px;
     transition: background-color 0.3s ease;
-    /* CRITICAL: Remove the width property as the wrapper takes care of it */
 }
 
 .resume-button:hover {
@@ -113,56 +108,72 @@
 }
 
 /* ==================================== */
-/* MOBILE RESPONSIVENESS (<= 768px)       */
+/* MOBILE RESPONSIVENESS (<= 768px)       */
 /* ==================================== */
 
 @media (max-width: 768px) {
     .home-section {
-        min-height: auto; 
+        /* Allow content to push height beyond 100vh */
+        height: auto; 
     }
+    
     .home-content-wrapper {
         flex-direction: column-reverse; 
         text-align: center;
-        min-height: auto;
         height: auto;
         padding-bottom: 50px;
+        /* CRITICAL: Remove left/right padding here so the inner content handles it */
+        padding-left: 0; 
+        padding-right: 0;
     }
+    
     .home-content {
         width: 100%; 
         height: auto;
+        /* Use symmetric padding to prevent overflow */
         padding: 0 20px;
         align-items: center; 
-        padding-right: 20px;
         margin-top: 30px;
     }
     
-    /* --- CRITICAL FIXES FOR IMAGE VISIBILITY ON MOBILE --- */
+    .name-title {
+        /* Reduce font size dramatically for small screens */
+        font-size: 3rem; 
+    }
+
+    .description {
+        /* Ensure max-width doesn't constrain on small screens, allowing full width utilization */
+        max-width: 100%; 
+        font-size: 1rem;
+        /* Remove margin from the description on small screens */
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    /* --- IMAGE VISIBILITY FIXES ON MOBILE --- */
     .home-image-container {
-        width: 80%; /* Image takes up 80% of screen width */
-        height: auto; /* Allow height to scale with content */
+        width: 100%; /* Image takes up full width for better scaling */
+        height: auto; 
         margin-bottom: 30px; 
-        margin-top: 50px; /* Add margin on top to separate from navbar */
-        padding: 0;
+        margin-top: 50px; 
+        padding: 0 20px; /* Add padding to stop image from touching edges */
         justify-content: center;
     }
 
     .profile-photo {
+        /* Ensure the photo fits entirely within its container */
         max-width: 100%;
         height: auto;
-        object-fit: contain;
-        border-radius: 5px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     }
     /* ----------------------------------------------------- */
 
-    /* Ensure the link wrapper centers on mobile */
+    /* Center button on mobile */
     .resume-button-link {
         width: 100%;
         display: flex;
         justify-content: center;
     }
     .resume-button {
-        /* Optional: give button max width on mobile */
         max-width: 300px;
         width: 100%;
     }
